@@ -1,5 +1,5 @@
 {
-  "name": "@ffmpeg/ffmpeg",
+  "name": "@shm-open/ffmpeg",
   "version": "0.10.1",
   "description": "FFmpeg WebAssembly version",
   "main": "src/index.js",
@@ -18,14 +18,15 @@
     "test:node": "node --experimental-wasm-threads --experimental-wasm-bulk-memory node_modules/.bin/_mocha --exit --bail --require ./scripts/test-helper.js",
     "test:node:all": "npm run test:node -- ./tests/*.test.js",
     "test:browser": "mocha-headless-chrome -a allow-file-access-from-files -a incognito -a no-sandbox -a disable-setuid-sandbox -a disable-logging -t 300000",
-    "test:browser:ffmpeg": "npm run test:browser -- -f ./tests/ffmpeg.test.html"
+    "test:browser:ffmpeg": "npm run test:browser -- -f ./tests/ffmpeg.test.html",
+    "release": "npm test && npm run build && standard-version && git push --follow-tags origin master && npm publish"
   },
   "browser": {
     "./src/node/index.js": "./src/browser/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ffmpegwasm/ffmpeg.wasm.git"
+    "url": "git+https://github.com/shm-open/ffmpeg.wasm.git"
   },
   "keywords": [
     "ffmpeg",
@@ -40,12 +41,13 @@
   "engines": {
     "node": ">=12.16.1"
   },
-  "homepage": "https://github.com/ffmpegwasm/ffmpeg.wasm#readme",
+  "homepage": "https://github.com/shm-open/ffmpeg.wasm",
   "dependencies": {
     "is-url": "^1.2.4",
     "node-fetch": "^2.6.1",
     "regenerator-runtime": "^0.13.7",
-    "resolve-url": "^0.2.1"
+    "resolve-url": "^0.2.1",
+    "standard-version": "9.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
