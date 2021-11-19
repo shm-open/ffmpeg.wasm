@@ -1,6 +1,6 @@
 {
   "name": "@shm-open/ffmpeg",
-  "version": "0.10.2",
+  "version": "0.10.3",
   "description": "FFmpeg WebAssembly version",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -19,7 +19,7 @@
     "test:node:all": "npm run test:node -- ./tests/*.test.js",
     "test:browser": "mocha-headless-chrome -a allow-file-access-from-files -a incognito -a no-sandbox -a disable-setuid-sandbox -a disable-logging -t 300000",
     "test:browser:ffmpeg": "npm run test:browser -- -f ./tests/ffmpeg.test.html",
-    "release": "npm run build && standard-version && git push --follow-tags origin master && npm publish"
+    "release": "npm run build && standard-version && git push --follow-tags origin master && npm publish --access public"
   },
   "browser": {
     "./src/node/index.js": "./src/browser/index.js"
