@@ -1,6 +1,6 @@
 {
   "name": "@shm-open/ffmpeg",
-  "version": "0.10.3",
+  "version": "0.10.4",
   "description": "FFmpeg WebAssembly version",
   "main": "src/index.js",
   "types": "src/index.d.ts",
